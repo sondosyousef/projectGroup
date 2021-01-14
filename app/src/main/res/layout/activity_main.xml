@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#F4E8E8">
+
+
+    <LinearLayout
+        android:layout_width="578dp"
+        android:layout_height="271dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="237dp"
+            android:layout_height="232dp"
+            android:gravity="center_horizontal"
+            android:src="@drawable/tr1"
+            android:textAlignment="center"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:layout_width="355dp"
+            android:layout_height="252dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="
+        The Palestinian Heritage Museum is located in Nablus,in the Old City,and is distinguished by its various sections that display everything related to the ancien heritage of Palestine ."
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="603dp"
+        android:layout_height="331dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="209dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="278dp"
+            android:layout_height="46dp"
+            android:text="Sections of the museum :"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="580dp"
+            android:layout_height="285dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/get_location"
+        android:layout_width="192dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#D1CCCC"
+        android:text="Get location"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>

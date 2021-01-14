@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:orientation="vertical"
+    tools:context=".Location1">
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_labellat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Lat:"
+            />
+
+        <TextView
+            android:id="@+id/tv_lat"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="0.00" />
+
+    </TableRow>
+
+    <TableRow
+        >
+        <TextView
+            android:id="@+id/tv_labellon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="lon:"
+            />
+
+        <TextView
+            android:id="@+id/tv_lon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="0.00"
+            />
+
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/tv_labelaltitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Altitude:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_labellon" />
+
+        <TextView
+            android:id="@+id/tv_altitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:layout_marginTop="5dp"
+            />
+
+    </TableRow>
+
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tv_labelaccuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Accuracy:"
+            />
+
+        <TextView
+            android:id="@+id/tv_accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:layout_marginTop="5dp" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tv_labelspeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Speed:"
+            />
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:layout_marginTop="5dp" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tv_labelsensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sensor:"
+            />
+
+        <TextView
+            android:id="@+id/tv_sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cell Tower + Wifi"
+            android:layout_marginTop="5dp" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tv_labelupdates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Updates:"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_updates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Off"
+            android:layout_marginTop="5dp" />
+
+    </TableRow>
+
+
+    <Switch
+        android:id="@+id/sw_locationsupdates"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:checked="true"
+        android:onClick="sw_updates_onclick"
+        android:text="Location Updates" />
+
+    <Switch
+        android:id="@+id/sw_gps"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:onClick="gps_onClick"
+        android:text="GPS/SavePower" />
+
+    <TableRow android:layout_height="64dp">
+
+        <TextView
+            android:id="@+id/tv_lbladdress"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Address:" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="205dp"
+            android:layout_height="match_parent" />
+
+    </TableRow>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="417dp"
+        android:layout_height="453dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp" />
+
+
+
+
+</TableLayout>
