@@ -10,16 +10,16 @@
 
 
     <LinearLayout
-        android:layout_width="578dp"
-        android:layout_height="271dp"
+        android:layout_width="533dp"
+        android:layout_height="323dp"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="237dp"
-            android:layout_height="232dp"
+            android:layout_width="453dp"
+            android:layout_height="163dp"
             android:gravity="center_horizontal"
             android:src="@drawable/tr1"
             android:textAlignment="center"
@@ -28,8 +28,8 @@
             tools:layout_editor_absoluteY="16dp" />
 
         <TextView
-            android:layout_width="355dp"
-            android:layout_height="252dp"
+            android:layout_width="406dp"
+            android:layout_height="196dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="
@@ -47,8 +47,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="603dp"
-        android:layout_height="331dp"
+        android:layout_width="522dp"
+        android:layout_height="321dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,22 +65,23 @@
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="580dp"
-            android:layout_height="285dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/dis"
+            android:layout_width="187dp"
+            android:layout_height="74dp"
+            android:text="Display Section"
+            android:textStyle="bold"
+            android:backgroundTint="#D1CCCC"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/get_location"
+            android:layout_width="179dp"
+            android:layout_height="60dp"
+            android:text="Get location"
+            android:backgroundTint="#D1CCCC"
+            android:textColor="@color/black" />
     </LinearLayout>
-
-
-    <Button
-        android:id="@+id/get_location"
-        android:layout_width="192dp"
-        android:layout_height="70dp"
-        android:backgroundTint="#D1CCCC"
-        android:text="Get location"
-        android:textColor="@color/black" />
 
 
 </LinearLayout>

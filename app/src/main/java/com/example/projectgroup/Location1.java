@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,6 +14,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +52,13 @@ public class Location1 extends AppCompatActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Button bake = findViewById(R.id.back_home2);
+        bake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backHomePage();
+            }
+        });
 
         tv_lat = findViewById(R.id.tv_lat);
         tv_lon = findViewById(R.id.tv_lon);
@@ -198,5 +207,9 @@ public class Location1 extends AppCompatActivity implements OnMapReadyCallback {
         LatLng position = new LatLng(32.2226678, 35.2621461);
         mMap.addMarker(new MarkerOptions().position(position).title("Nablus"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom((position),12));
+    }
+    private void backHomePage() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
