@@ -52,6 +52,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
             imageLoader1 = ServerImageParseAdapter.getInstance(context).getImageLoader();
 
+
             imageLoader1.get(getDataAdapter1.getImageServerUrl(),
                     ImageLoader.getImageListener(
                             holder.networkImageView,//Server Image
@@ -70,6 +71,10 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                     i.putExtra("image_name", getDataAdapter1.ImageTitleName);
                     i.putExtra("image_Url", getDataAdapter1.ImageServerUrl);
                     i.putExtra("image_dec", getDataAdapter1.Description);
+                    i.putExtra("image1", getDataAdapter1.img1);
+                    i.putExtra("image2", getDataAdapter1.img2);
+                    i.putExtra("text1", getDataAdapter1.text1);
+                    i.putExtra("text2", getDataAdapter1.text2);
                     v.getContext().startActivity(i);
 
                 }
@@ -91,6 +96,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         public TextView ImageTitleNameView;
         public NetworkImageView networkImageView ;
+
+
         public TextView Desc;
 
         public ViewHolder(View itemView) {

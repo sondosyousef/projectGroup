@@ -46,19 +46,25 @@ public class description extends AppCompatActivity {
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
 
-        if(getIntent().hasExtra("image_Url") && getIntent().hasExtra("image_name")&&getIntent().hasExtra("image_dec")){
+        if(getIntent().hasExtra("image_Url") && getIntent().hasExtra("image_name")
+                &&getIntent().hasExtra("image_dec")&&getIntent().hasExtra("image1")&&getIntent().hasExtra("image2")
+                &&getIntent().hasExtra("text1")&&getIntent().hasExtra("text2")){
             Log.d(TAG, "getIncomingIntent: found intent extras.");
 
             String imageUrl = getIntent().getStringExtra("image_Url");
             String imageName = getIntent().getStringExtra("image_name");
             String desc = getIntent().getStringExtra("image_dec");
+            String de1 = getIntent().getStringExtra("image1");
+            String de2 = getIntent().getStringExtra("image2");
+            String tex1 = getIntent().getStringExtra("text1");
+            String tex2 = getIntent().getStringExtra("text2");
 
-            setImage(imageUrl, imageName,desc);
+            setImage(imageUrl, imageName,desc,de1,de2,tex1,tex2);
         }
     }
 
 
-    private void setImage(String imageUrl, String imageName,String dec){
+    private void setImage(String imageUrl, String imageName,String dec,String de1,String de2,String tex1,String tex2){
         Log.d(TAG, "setImage: setting te image and name to widgets.");
 
         TextView name = findViewById(R.id.name);
@@ -69,8 +75,25 @@ public class description extends AppCompatActivity {
                 .asBitmap()
                 .load(imageUrl)
                 .into(image);
+        ImageView image1 = findViewById(R.id.im1);
+        Glide.with(this)
+                .asBitmap()
+                .load(de1)
+                .into(image1);
+        ImageView image2 = findViewById(R.id.im2);
+        Glide.with(this)
+                .asBitmap()
+                .load(de2)
+                .into(image2);
+
         TextView description = findViewById(R.id.description);
         description.setText(dec);
+
+        TextView text1=findViewById(R.id.text1);
+        TextView text2=findViewById(R.id.text2);
+
+        text1.setText(tex1);
+        text2.setText(tex2);
 
     }
 

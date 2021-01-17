@@ -38,6 +38,10 @@ public class section extends AppCompatActivity {
     String JSON_IMAGE_TITLE_NAME = "image_title";
     String JSON_DESCRIPTION = "description";
     String JSON_IMAGE_URL = "image_url";
+    String JSON_IMAGE1 = "imge1";
+    String JSON_IMAGE2 = "imge2";
+    String JSON_text1 = "text1";
+    String JSON_text2 = "text2";
 
     JsonArrayRequest jsonArrayRequest ;
 
@@ -115,6 +119,10 @@ public class section extends AppCompatActivity {
                 GetDataAdapter2.setImageTitleNamee(json.getString(JSON_IMAGE_TITLE_NAME));
                 GetDataAdapter2.setDescription(json.getString(JSON_DESCRIPTION));
                 GetDataAdapter2.setImageServerUrl(json.getString(JSON_IMAGE_URL));
+                GetDataAdapter2.setImg1(json.getString(JSON_IMAGE1));
+                GetDataAdapter2.setImg2(json.getString(JSON_IMAGE2));
+                GetDataAdapter2.setText1(json.getString(JSON_text1));
+                GetDataAdapter2.setText2(json.getString(JSON_text2));
 
 
 

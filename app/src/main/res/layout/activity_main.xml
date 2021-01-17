@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="319dp"
+        android:layout_height="406dp"
         android:orientation="vertical">
 
         <ImageView
@@ -24,10 +24,10 @@
             tools:layout_editor_absoluteY="16dp" />
 
         <TextView
-            android:layout_marginLeft="10dp"
             android:id="@+id/textView"
             android:layout_width="278dp"
-            android:layout_height="46dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:text="About Us :"
             android:textColor="#6A2A2A"
@@ -35,58 +35,83 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="372dp"
-            android:layout_height="165dp"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="
-         The Palestinian Heritage Museum is located in Nablus,in the Old City,and is distinguished by its various sections that display everything related to the ancien heritage of Palestine ."
+            The museum was established to express the authenticity of the Palestinian heritage and protect the heritage and authenticity from loss and change by the occupiers, as the museum contains many sections in each section that displays part of the original heritage, including clothes, antiques, traditional foods, and historical books inherited from the ancestors."
+
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.931"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="522dp"
-        android:layout_height="261dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="209dp">
-
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/dis"
-            android:layout_width="210dp"
-            android:layout_height="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#D1CCCC"
             android:text="Display Section"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/get_location"
-            android:layout_width="210dp"
-            android:layout_height="60dp"
-            android:text="Get location"
-            android:textColor="@color/black"
-            android:backgroundTint="#D1CCCC"
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+
+            android:layout_height="39dp"
+            android:layout_marginLeft="10dp"
+            android:text="Location of Museum:"
+            android:textColor="#6A2A2A"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
 
+        <TextView
+            android:layout_width="411dp"
+
+            android:layout_height="69dp"
+            android:layout_marginLeft="10dp"
+            android:text="
+            The museum is located in the old city of Nablus in the Al-Yasmina neighborhood, which carries an ancient character of Palestinian heritage"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="477dp"
+            android:layout_height="123dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/get_location"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#D1CCCC"
+                android:text="Get location"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="325dp"
+                android:layout_height="156dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/tent_hdr2new1small" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
+
     <TextView
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
         android:layout_width="236dp"
         android:layout_height="38dp"
         android:text="Contact information"
