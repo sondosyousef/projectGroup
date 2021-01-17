@@ -26,7 +26,7 @@ import com.android.volley.toolbox.Volley;
 
 public class section extends AppCompatActivity {
 
-    List<GetDataAdapter> GetDataAdapter1;
+    List<GetDataAdapter> arrayList;
 
     RecyclerView recyclerView;
 
@@ -36,6 +36,7 @@ public class section extends AppCompatActivity {
 
     String GET_JSON_DATA_HTTP_URL = "http://10.0.2.2:84/HeritageSection/info1.php";
     String JSON_IMAGE_TITLE_NAME = "image_title";
+    String JSON_DESCRIPTION = "description";
     String JSON_IMAGE_URL = "image_url";
 
     JsonArrayRequest jsonArrayRequest ;
@@ -55,7 +56,7 @@ public class section extends AppCompatActivity {
             }
         });
 
-        GetDataAdapter1 = new ArrayList<>();
+        arrayList = new ArrayList<>();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
 
@@ -110,19 +111,25 @@ public class section extends AppCompatActivity {
 
                 json = array.getJSONObject(i);
 
-                GetDataAdapter2.setImageTitleNamee(json.getString(JSON_IMAGE_TITLE_NAME));
 
+                GetDataAdapter2.setImageTitleNamee(json.getString(JSON_IMAGE_TITLE_NAME));
+                GetDataAdapter2.setDescription(json.getString(JSON_DESCRIPTION));
                 GetDataAdapter2.setImageServerUrl(json.getString(JSON_IMAGE_URL));
+
+
 
             } catch (JSONException e) {
 
                 e.printStackTrace();
             }
-            GetDataAdapter1.add(GetDataAdapter2);
+            arrayList.add(GetDataAdapter2);
+
         }
 
-        recyclerViewadapter = new RecycleViewAdapter(GetDataAdapter1, this);
+        recyclerViewadapter = new RecycleViewAdapter(arrayList, this);
 
         recyclerView.setAdapter(recyclerViewadapter);
+
+
     }
 }

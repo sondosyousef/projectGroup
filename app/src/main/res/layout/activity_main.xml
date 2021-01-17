@@ -10,26 +10,32 @@
 
 
     <LinearLayout
-        android:layout_width="533dp"
-        android:layout_height="323dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="319dp"
         android:orientation="vertical">
-
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="453dp"
-            android:layout_height="163dp"
-            android:gravity="center_horizontal"
-            android:src="@drawable/tr1"
-            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:src="@drawable/ff"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="-10dp"
             tools:layout_editor_absoluteY="16dp" />
 
         <TextView
-            android:layout_width="406dp"
-            android:layout_height="196dp"
+            android:id="@+id/textView"
+            android:layout_width="278dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:text="About Us :"
+            android:textColor="#6A2A2A"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="372dp"
+            android:layout_height="165dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="
@@ -46,9 +52,10 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="522dp"
-        android:layout_height="321dp"
+        android:layout_height="261dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,31 +63,51 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="209dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="278dp"
-            android:layout_height="46dp"
-            android:text="Sections of the museum :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/dis"
-            android:layout_width="187dp"
-            android:layout_height="74dp"
-            android:text="Display Section"
-            android:textStyle="bold"
+            android:layout_width="210dp"
+            android:layout_height="64dp"
             android:backgroundTint="#D1CCCC"
-            android:textColor="@color/black"/>
+            android:text="Display Section"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/get_location"
-            android:layout_width="179dp"
+            android:layout_width="210dp"
             android:layout_height="60dp"
             android:text="Get location"
+            android:textColor="@color/black"
             android:backgroundTint="#D1CCCC"
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="236dp"
+        android:layout_height="38dp"
+        android:text="Contact information"
+        android:textColor="#7A4545"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="127dp"
+            android:layout_height="43dp"
+            android:text="Tel : 02-28459399" />
+
+        <TextView
+            android:layout_width="292dp"
+            android:layout_height="43dp"
+            android:text="Gamil : heritage_museum55@gmail.com" />
     </LinearLayout>
 
 

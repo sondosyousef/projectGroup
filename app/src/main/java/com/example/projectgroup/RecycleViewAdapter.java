@@ -2,15 +2,19 @@ package com.example.projectgroup;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+;
+
 
 import java.util.List;
 
@@ -21,6 +25,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     List<GetDataAdapter> getDataAdapter;
 
     ImageLoader imageLoader1;
+    GetDataAdapter getDataAdapter1;
 
     public RecycleViewAdapter(List<GetDataAdapter> getDataAdapter, Context context){
 
@@ -42,7 +47,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @Override
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
-        GetDataAdapter getDataAdapter1 =  getDataAdapter.get(position);
+       getDataAdapter1 =  getDataAdapter.get(position);
 
         imageLoader1 = ServerImageParseAdapter.getInstance(context).getImageLoader();
 
@@ -58,6 +63,19 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         Viewholder.ImageTitleNameView.setText(getDataAdapter1.getImageTitleName());
 
+        //Viewholder.Desc.setText(getDataAdapter1.getDescription());
+        Viewholder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),description.class);
+                i.putExtra("image_name", getDataAdapter1.ImageTitleName);
+                i.putExtra("image_Url", getDataAdapter1.ImageServerUrl);
+                v.getContext().startActivity(i);
+
+            }
+        });
+
+
     }
 
     @Override
@@ -70,14 +88,16 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         public TextView ImageTitleNameView;
         public NetworkImageView networkImageView ;
+      //  public TextView Desc;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
 
-            ImageTitleNameView = (TextView) itemView.findViewById(R.id.textView_item) ;
 
+            ImageTitleNameView = (TextView) itemView.findViewById(R.id.textView_item) ;
             networkImageView = (NetworkImageView) itemView.findViewById(R.id.VollyNetworkImageView1) ;
+
 
         }
     }

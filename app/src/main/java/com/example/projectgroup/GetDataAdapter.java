@@ -4,6 +4,18 @@ public class GetDataAdapter {
 
     public String ImageServerUrl;
     public String ImageTitleName;
+    public String Description;
+
+
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
 
     public String getImageServerUrl() {
         return ImageServerUrl;
