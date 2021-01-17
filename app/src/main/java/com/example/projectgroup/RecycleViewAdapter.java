@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,38 +46,40 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder Viewholder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-       getDataAdapter1 =  getDataAdapter.get(position);
+            GetDataAdapter getDataAdapter1 =  getDataAdapter.get(position);
 
-        imageLoader1 = ServerImageParseAdapter.getInstance(context).getImageLoader();
+            imageLoader1 = ServerImageParseAdapter.getInstance(context).getImageLoader();
 
-        imageLoader1.get(getDataAdapter1.getImageServerUrl(),
-                ImageLoader.getImageListener(
-                        Viewholder.networkImageView,//Server Image
-                        R.mipmap.ic_launcher,//Before loading server image the default showing image.
-                        android.R.drawable.ic_dialog_alert //Error image if requested image dose not found on server.
-                )
-        );
+            imageLoader1.get(getDataAdapter1.getImageServerUrl(),
+                    ImageLoader.getImageListener(
+                            holder.networkImageView,//Server Image
+                            R.mipmap.ic_launcher,//Before loading server image the default showing image.
+                            android.R.drawable.ic_dialog_alert //Error image if requested image dose not found on server.
+                    )
+            );
 
-        Viewholder.networkImageView.setImageUrl(getDataAdapter1.getImageServerUrl(), imageLoader1);
+            holder.networkImageView.setImageUrl(getDataAdapter1.getImageServerUrl(), imageLoader1);
 
-        Viewholder.ImageTitleNameView.setText(getDataAdapter1.getImageTitleName());
+            holder.ImageTitleNameView.setText(getDataAdapter1.getImageTitleName());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
 
-        //Viewholder.Desc.setText(getDataAdapter1.getDescription());
-        Viewholder.itemView.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(),description.class);
+                    i.putExtra("image_name", getDataAdapter1.ImageTitleName);
+                    i.putExtra("image_Url", getDataAdapter1.ImageServerUrl);
+                    i.putExtra("image_dec", getDataAdapter1.Description);
+                    v.getContext().startActivity(i);
 
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(),description.class);
-                i.putExtra("image_name", getDataAdapter1.ImageTitleName);
-                i.putExtra("image_Url", getDataAdapter1.ImageServerUrl);
-                v.getContext().startActivity(i);
-
-            }
-        });
+                }
+            });
 
 
-    }
+
+        }
+
+
 
     @Override
     public int getItemCount() {
@@ -88,7 +91,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         public TextView ImageTitleNameView;
         public NetworkImageView networkImageView ;
-      //  public TextView Desc;
+        public TextView Desc;
 
         public ViewHolder(View itemView) {
 
@@ -97,6 +100,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
             ImageTitleNameView = (TextView) itemView.findViewById(R.id.textView_item) ;
             networkImageView = (NetworkImageView) itemView.findViewById(R.id.VollyNetworkImageView1) ;
+
 
 
         }

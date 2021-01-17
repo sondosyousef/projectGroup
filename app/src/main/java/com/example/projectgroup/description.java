@@ -46,18 +46,19 @@ public class description extends AppCompatActivity {
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: checking for incoming intents.");
 
-        if(getIntent().hasExtra("image_Url") && getIntent().hasExtra("image_name")){
+        if(getIntent().hasExtra("image_Url") && getIntent().hasExtra("image_name")&&getIntent().hasExtra("image_dec")){
             Log.d(TAG, "getIncomingIntent: found intent extras.");
 
             String imageUrl = getIntent().getStringExtra("image_Url");
             String imageName = getIntent().getStringExtra("image_name");
+            String desc = getIntent().getStringExtra("image_dec");
 
-            setImage(imageUrl, imageName);
+            setImage(imageUrl, imageName,desc);
         }
     }
 
 
-    private void setImage(String imageUrl, String imageName){
+    private void setImage(String imageUrl, String imageName,String dec){
         Log.d(TAG, "setImage: setting te image and name to widgets.");
 
         TextView name = findViewById(R.id.name);
@@ -68,6 +69,8 @@ public class description extends AppCompatActivity {
                 .asBitmap()
                 .load(imageUrl)
                 .into(image);
+        TextView description = findViewById(R.id.description);
+        description.setText(dec);
 
     }
 

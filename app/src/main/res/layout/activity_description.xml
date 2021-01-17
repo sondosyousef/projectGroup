@@ -5,37 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    tools:context=".description">
+    tools:context=".description"
+    android:layout_marginLeft="10dp"
+    android:background="#EADDDD">
 
     <TextView
+        android:layout_marginLeft="10dp"
+
         android:id="@+id/name"
         android:layout_width="400dp"
         android:layout_height="97dp"
-        android:text="ddd"
-        android:textSize="50dp"
+        android:text="name Section"
+        android:textSize="30dp"
         android:textStyle="bold"
+
+        android:textColor="#834B4B"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="312dp"
+        android:layout_width="272dp"
         android:layout_height="182dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="116dp" />
 
     <TextView
+        android:layout_marginLeft="10dp"
         android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="381dp" />
+        android:layout_height="284dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#653D3D"/>
 
     <Button
         android:id="@+id/btn_back"
         android:layout_width="163dp"
         android:layout_height="59dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#D1CCCC"
         android:text="Back"
         android:textColor="@color/black"
-        android:backgroundTint="#D1CCCC"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 </LinearLayout>
